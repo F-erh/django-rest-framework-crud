@@ -15,15 +15,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Movie',
+            name='Droid',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('genre', models.CharField(max_length=100)),
-                ('year', models.IntegerField()),
+                ('Descricao', models.CharField(max_length=100)),
+                ('Endereco', models.CharField(max_length=100)),
+                ('Contato', models.IntegerField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('creator', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='movies', to=settings.AUTH_USER_MODEL)),
+                ('anunciante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='droid', to=settings.AUTH_USER_MODEL)),
+                ('Status', models.CharField(max_length=100))
             ],
         ),
     ]

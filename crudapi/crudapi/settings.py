@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'authentication',
-    'movies',
+    'droids',
 ]
 
 SITE_ID = 1

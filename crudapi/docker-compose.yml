@@ -1,0 +1,22 @@
+version: "2"
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+    labels:
+     - 'app.environment=${ENV_APP}'
+    environment:
+     - HOST_RUN=${HOST_RUN}
+     - DEBUG=${DEBUG}
+  redis:
+    image: redis:3.2.1
+    volumes:
+     - dados:/data
+    labels:
+     - 'app.environment=${ENV_APP}'
+volumes:
+  dados:
+    external: false
